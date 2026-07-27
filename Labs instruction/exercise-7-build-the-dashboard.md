@@ -6,7 +6,7 @@
 
 ## Objective
 
-Connect a frontend component to the backend you built this morning. The exact build just demonstrated.
+Connect a frontend component to the backend you built this morning, the exact build just demonstrated.
 
 ## Starting Point
 
@@ -24,17 +24,22 @@ Connect a frontend component to the backend you built this morning. The exact bu
    ```
    Add a loading state, an error state, and an empty state for when there are zero tasks.
    ```
-4. Run the frontend locally:
+4. **Ask Claude to give the list some real visual styling**; don't skip this step, you'll need it for Exercise 8:
+   ```
+   Style each task as a card: padding, a subtle background color, rounded corners, and spacing between cards. Arrange them in a simple vertical list.
+   ```
+5. Run the frontend locally:
    ```
    npm run dev
    ```
    (with your backend already running in a separate terminal)
-5. Click through all three states, load the page normally, then stop your backend briefly to see the error state, then restart it.
+6. Click through all three states, load the page normally, then stop your backend briefly to see the error state, then restart it.
 
 ## Expected Outcome
 
 - [ ] A dashboard component that lists tasks from your own live API.
 - [ ] Visible loading, error, and empty states, each confirmed by triggering it yourself.
+- [ ] Tasks are styled as visually distinct cards with spacing between them; plain, unstyled text isn't enough here, since Exercise 8 needs real CSS to work with.
 
 ## Go Further (Optional)
 
@@ -44,6 +49,7 @@ Ask Claude to add a button that creates a new task using the `POST` endpoint fro
 
 - **Field names don't match between frontend and backend** → this is a genuinely useful thing to catch now; ask Claude to fix the mismatch by referencing your backend controller again, explicitly.
 - **The error state doesn't appear when you stop the backend** → try refreshing the page manually after stopping it.
+- **The result still looks completely unstyled after step 4** → ask again, more specifically: "Add inline styles or a stylesheet, I want to see actual padding, background, and spacing, not just plain HTML." Don't move on to Exercise 8 until you have something visual to work with.
 
 ## Reflect
 

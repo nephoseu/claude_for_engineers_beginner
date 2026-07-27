@@ -6,17 +6,17 @@
 
 ## Objective
 
-Add a new `POST /tasks` endpoint to the existing API, in small, reviewable steps, the exact sequence just demonstrated.
+Add a new `POST /tasks` endpoint that creates a task, in small, reviewable steps — **without validation yet**. That's deliberate: you'll add validation in Exercise 6, guided by a failing test.
 
 ## Starting Point
 
-- Your copy of `task-tracker/backend`. `routes/tasks.js` has `GET /tasks` only. Running `npm test` should show one passing test (GET) and one failing test (POST). That failing test is expected and is what you're about to make pass.
+- Your copy of `task-tracker/backend`. `routes/tasks.js` has `GET /tasks` only. Running `npm test` should show **1 passing test (GET) and 2 failing tests (both POST tests)**, that's expected.
 
 ## Steps
 
 1. Ask Claude for a structural breakdown first:
    ```
-   Before writing any code, give me a plan for adding a POST /tasks endpoint. What files will you touch and why?
+   Before writing any code, give me a plan for adding a POST /tasks endpoint that creates a task — what files will you touch and why?
    ```
 2. Review the plan. If anything looks off, say so before continuing.
 3. Request the route wiring, exactly as demonstrated:
@@ -24,31 +24,27 @@ Add a new `POST /tasks` endpoint to the existing API, in small, reviewable steps
    Add the route for POST /tasks in routes/tasks.js, calling a controller function we'll add next.
    ```
 4. Review that diff fully before moving on.
-5. Request the controller logic as a **separate** step:
+5. Request the controller logic, **and explicitly ask Claude to hold off on validation**:
    ```
-   Now add the controller function that creates a task and returns it with a 201 status.
+   Now add the controller function that creates a task from the request body and returns it with a 201 status. Don't add validation yet, we'll handle that separately.
    ```
-6. Review that diff.
-7. Request validation as its own, third step:
-   ```
-   Add validation for the request body, title is required, dueDate is optional.
-   ```
-8. Review each diff before asking for the next piece. Don't batch these into one message.
-9. Run the test suite once scaffolding feels complete:
+6. Review the diff. If Claude adds validation anyway, ask it to remove that check you want it left out on purpose for now.
+7. Run the test suite:
    ```
    npm test
    ```
 
 ## Expected Outcome
 
-- [ ] A working `POST /tasks` endpoint, built through at least three separate, reviewed requests.
-- [ ] You can explain what each request added, in order.
+- [ ] `npm test` shows **2 passing, 1 failing**; GET passes, "returns 201" passes, "returns 400 when title is missing" still fails.
+- [ ] You can explain what each of the two requests (route, controller) added.
+- [ ] You deliberately did **not** add validation; that's correct, not a mistake.
 
 ## If You Get Stuck
 
-- **Claude tries to do everything in one response** → explicitly ask it to stop after the current file and wait for your review: "Just do the route for now, hold off on the rest."
-- **`npm test` is still red at the end** → that's expected and fine, it feeds directly into Exercise 6, which is exactly built for this situation.
+- **Claude tries to do everything in one response, including validation** → explicitly ask it to stop after creation and wait for your review.
+- **All 3 tests already pass** → Claude added validation despite being asked not to; ask it to remove that check so the validation test goes back to red, you need that failing test for Exercise 6.
 
 ## Reflect
 
-Which of the three requests (route, controller, validation) produced the diff you found easiest to review, and why?
+Which of the two requests (route, controller) produced the diff you found easiest to review, and why?
