@@ -16,7 +16,7 @@ Add a new `POST /tasks` endpoint that creates a task, in small, reviewable steps
 
 1. Ask Claude for a structural breakdown first:
    ```
-   Before writing any code, give me a plan for adding a POST /tasks endpoint that creates a task — what files will you touch and why?
+   Before writing any code, give me a plan for adding a POST /tasks endpoint that creates a task. What files will you touch and why?
    ```
 2. Review the plan. If anything looks off, say so before continuing.
 3. Request the route wiring, exactly as demonstrated:

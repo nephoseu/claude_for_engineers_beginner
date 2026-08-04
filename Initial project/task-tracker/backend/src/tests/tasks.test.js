@@ -15,4 +15,9 @@ describe('POST /tasks', () => {
     expect(res.status).toBe(201);
     expect(res.body.title).toBe('New task');
   });
+
+  it('returns 400 when title is missing', async () => {
+    const res = await request(app).post('/tasks').send({});
+    expect(res.status).toBe(400);
+  });
 });

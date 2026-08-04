@@ -49,7 +49,7 @@ Get Claude Code installed, signed in, and running your first request inside the 
 
 - **`node -v` returns version bellow 22.0.0**→ you need to install newer version of node.
 - **`npm install` fails with a permissions error** → this is usually a corporate policy, not something broken.
-Try to run this command:
+Try to run this command on **Windows**:
    ```
       Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
    ```

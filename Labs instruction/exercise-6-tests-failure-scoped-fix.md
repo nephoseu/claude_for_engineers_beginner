@@ -14,22 +14,12 @@ Practice the single highest-value debugging habit of the day, using the validati
 
 ## Steps
 
-1. Add the test with Claude that will test validation:
-   ```
-   Add a new test in the POST /tasks describe block, right after the "returns 201" test:
-   it('returns 400 when title is missing', async () => {
-    const res = await request(app).post('/tasks').send({});
-   expect(res.status).toBe(400);
-   });
-   Don't change anything else in the file.
-   ```
-
 1. Run the test suite:
    ```
    npm test
    ```
 2. You should see exactly one failure: `POST /tasks › returns 400 when title is missing`.
-3. Copy the **exact** console output, the failure message, the expected/received values, the full stack trace. Don't summarize it in your own words.
+3. Copy the **exact** console output — the failure message, the expected/received values, the full stack trace. Don't summarize it in your own words. Select the text first, then: **macOS** — Cmd+C. **Windows** — Ctrl+Shift+C (plain Ctrl+C usually stops the running process instead of copying).
 4. Paste it into Claude Code and ask:
    ```
    This test is failing with the output above. Find the cause and propose a scoped fix.

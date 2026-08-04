@@ -6,11 +6,11 @@
 
 ## Objective
 
-Practice the core habit of the day: ask, read the diff, then decide — exactly as just demonstrated on `src/utils/format.js`.
+Practice the core habit of the day: ask, read the diff, then decide, exactly as just demonstrated on `src/utils/format.js`.
 
 ## Starting Point
 
-- Your Claude Code session from Exercise 1 (or a fresh one — either is fine), still inside `task-tracker/backend`.
+- Your Claude Code session from Exercise 1 (or a fresh one, either is fine), still inside `task-tracker/backend`.
 
 ## Steps
 

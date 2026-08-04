@@ -18,7 +18,7 @@ Generate a baseline CLAUDE.md, then improve it with knowledge only you have, sam
    ```
    /init
    ```
-2. Open the generated `CLAUDE.md` file and read it section by section — Commands, Structure, Conventions.
+2. Open the generated `CLAUDE.md` file and read it section by section: Commands, Structure, Conventions.
 3. Find at least one thing that's wrong, outdated, or missing, and correct it by hand.
 4. Add the same kind of "don't touch this" note the instructor added, pointing at `src/legacy/`:
    ```
